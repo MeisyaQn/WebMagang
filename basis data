@@ -1,0 +1,44 @@
+<mxfile>
+  <diagram id="clinic_erd" name="ERD Klinik">
+    <mxGraphModel dx="827" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1"/>
+
+        <!-- ENTITY: DOKTER -->
+        <mxCell id="dokter" value="DOKTER GIGI&#xa;--------------------&#xa;PK: ID_Dokter&#xa;Nama&#xa;Spesialisasi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1">
+          <mxGeometry x="120" y="180" width="200" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTITY: PASIEN -->
+        <mxCell id="pasien" value="PASIEN&#xa;--------------------&#xa;PK: ID_Pasien&#xa;Nama&#xa;No_HP&#xa;Alamat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1">
+          <mxGeometry x="120" y="430" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTITY: JANJI TEMU -->
+        <mxCell id="janji" value="JANJI TEMU&#xa;--------------------&#xa;PK: ID_Janji&#xa;Tanggal&#xa;Jam&#xa;Keluhan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1">
+          <mxGeometry x="480" y="300" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIP Dokter — Janji -->
+        <mxCell id="rel_dokter_janji" edge="1" value="menangani" style="endArrow=ERnormal;startArrow=ERmand1;html=1;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="240" as="sourcePoint"/>
+            <mxPoint x="480" y="300" as="targetPoint"/>
+          </mxGeometry>
+          <mxCell source="dokter" target="janji"/>
+        </mxCell>
+
+        <!-- RELATIONSHIP Pasien — Janji -->
+        <mxCell id="rel_pasien_janji" edge="1" value="membuat" style="endArrow=ERnormal;startArrow=ERmand1;html=1;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="480" as="sourcePoint"/>
+            <mxPoint x="480" y="360" as="targetPoint"/>
+          </mxGeometry>
+          <mxCell source="pasien" target="janji"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
